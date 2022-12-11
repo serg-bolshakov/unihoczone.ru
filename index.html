@@ -13,6 +13,7 @@
 </head>
 <body>
     <container class="container">
+        
         <header class="header-top">
             <div class="welcome">
                 <span class="welcome-text">Добро пожаловать</span>&nbsp;
@@ -29,37 +30,54 @@
         </header>
 
         <header class="header-main">
-            <div class="welcome">
-                <span class="welcome-text">Добро пожаловать</span>&nbsp;
-                <span class="welcome-invitation">в команду UNIHOC</span>
-                    <div class="welcome-link">    
-                        <a href=""><img src="icons/external-link.png" alt="external-link"></a> 
-                        <div>(страница в новой вкладке)</div>
-                    </div>
+            <div>
+                <div class="header-main_left">
+                    <img src="icons/logo.png" width='70' height="70" alt="logo">
+                    <nav>
+                        <ul>
+                            <li><a href="unihoc.html">UNIHOC</a></li>
+                            <a href=""><img src="icons/expand-arrow.png" alt="external-link"></a>
+                            <li><a href="">ZONEFLOORALL.</a></li>
+                            <a href=""><img src="icons/expand-arrow.png" alt="expand-arrow"></a>
+                            <li><a href="">UnihocZoneRussia</a></li>
+                            <a href=""><img src="icons/expand-arrow.png" alt="expand-arrow"></a>
+                        </ul>
+                    </nav>
+                </div>    
             </div>
-            <div class="welcome-invitation header-top_slogan">
-                &mdash;&nbsp;Участие важно,<br>
-                но главное&nbsp;&mdash;&nbsp;это победа! 
+            <div class="header-main_right">
+                <form action="" method="get">
+                    <input name="search" placeholder="Что вы ищете..." type="search">
+                    <button type="submit"><img src="icons/search.png" alt="search"></button>
+                  </form>
+                <a href=""><img src="icons/combo-chart.png" alt="combo-chart" title="Добавить в сравнение"></a>
+                <a href=""><img src="icons/favorite.png" alt="favorite" title="Добавить в избранное"></a>
+                <a href=""><img src="icons/login.png" alt="login" title="Войти в личный кабинет / зарегистрироваться"></a>
+                <a href=""><img src="icons/opencart.png" alt="opencart" title="Посмотреть корзину"></a>
             </div>
         </header>
         
         <main class="content">
-            <section class="image1">
-                <img src="images/floorball-pro_708x472.jpeg" alt="proffesionals">
-                <p>Для профессионалов...</p>
-            </section>
-            <section class="image2">
-                <img src="images/floorball-girls_708x473.jpeg" alt="floorball-friends">
+            <div class="content-image content-image_1">
+                <img src="images/floorball-pro_708x472.jpeg" width='708' height="472" alt="proffesionals">
+                <p>Для профессионалов... </p>
+                <img class='icons-position' src="icons/about.png" alt="icon about">
+            </div>
+            <div class="content-image content-image_2">
+                <img src="images/floorball-girls_708x473.jpeg" width='708' height="472" alt="floorball-friends">
                 <p>любителей...</p>
-            </section>
-            <section class="image3">
-                <img src="images/floorball-boys_708x472.jpg" alt="youngsters">
-                <p>Для профессионалов...</p>
-            </section>
-            <section class="image4">
-                <img src="images/floorball-parents-children_708x472.jpg" alt="parents">
-                <p>Для профессионалов...</p>
-            </section>
+                <img class='icons-position' src="icons/about.png" alt="icon about">
+            </div>
+            <div class="content-image content-image_3">
+                <img src="images/floorball-boys_708x472.jpg" width='708' height="472" alt="youngsters">
+                <p>школ, ФОКов, спортсменов других видов спорта...</p>
+                <img class='icons-position' src="icons/about.png" alt="icon about">
+            </div>
+            <div class="content-image content-image_4">
+                <img src="images/floorball-parents-children_708x472.jpg" width='708' height="472" alt="parents">
+                <p>самых маленьких (первая самая лучшая клюшка)</p>
+                <img class='icons-position' src="icons/about.png" alt="icon about">
+            </div>
         </main>
 
 
@@ -87,27 +105,38 @@
 
             <div class="footer-notes">
                 <h2>СТАТЬИ И ЗАМЕТКИ</h2>
-                <p>Про жёсткость (флекс)</p>
-                <p>Технологии рукояток</p>
-                <p>Как подобрать клюшку</p>
-                <p>Длина рукоятки/клюшки/габарит</p>
-                <p>Какая клюшка крепче и прочнее</p>
-                <p>Немного о крюках (перьях...)</p>
-                <p>Правый и левые клюшки и крюки</p>
-                <p>Сборка и компоновка клюшек</p>
-                <p>Разное (ответы на вопросы)</p>
+                <a>Про жёсткость (флекс)</a>
+                <a>Технологии рукояток</a>
+                <a>Как подобрать клюшку</a>
+                <a>Длина рукоятки/клюшки/габарит</a>
+                <a>Какая клюшка крепче и прочнее</a>
+                <a>Немного о крюках (перьях...)</a>
+                <a>Правый и левые клюшки и крюки</a>
+                <a>Сборка и компоновка клюшек</a>
+                <a>Разное (ответы на вопросы)</a>
             </div>
 
             <div class="footer-assistance">
                 <h2>ПОДДЕРЖКА ПОКУПАТЕЛЕЙ</h2>
-                <p>Свяжитесь с нами</p>
-                <p>Заказать обратный звонок</p>
-                <p>Обмен и возврат товаров</p>
-                <p>Оплата и доставка заказов</p>
-                <p>Оплата и доставка товаров</p>
-                <p></p>
-                <p></p>
-                <p>+7 910 795 55 55 </p>
+                <a href="">Свяжитесь с нами</a>
+                <a href="">Заказать обратный звонок</a>
+                <a href="">Обмен и возврат товаров</a>
+                <a href="">Оплата и доставка заказов</a>
+                <div class="contacts-social">
+                    <a href=""><img src="icons/gmail-logo.png" alt="gmail-logo"></a>
+                    <a href=""><img src="icons/vk-logo.png" alt="vk-logo"></a>
+                    <a href=""><img src="icons/whatsApp-logo.png" alt="whatsApp-logo"></a>
+                    <a href=""><img src="icons/telegram-logo.png" alt="telegram-logo"></a>
+                    <a href=""><img src="icons/viber-logo.png" alt="viber-logo"></a>
+                    <a href=""><img src="icons/youTube-logo.png" alt="youTube-logo"></a>
+                </div>
+                <div class="paymentDelivery-methods">
+                    <p><img src="icons/master-card.png" alt="master-card"></p>
+                    <p><img src="icons/visa-card.png" alt="visa-card"></p>
+                    <!-- <p><img src="icons/mir-card.png" alt="mir-card"></p> -->
+                    <p><img src="icons/russianPost-logo.png" alt="russianPost-logo"></p>
+                </div>
+                <p>+7 910 795 55 55</p>
             </div>
 
         </footer>

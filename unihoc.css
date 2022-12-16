@@ -206,6 +206,19 @@ ul.breadcrumb li a:hover {
     text-decoration: none;
   } 
 
+  /*Добавляем символ для каждой кнопки, указывающий, является ли складное содержимое открытым или закрытым*/
+  .accordion:after {
+    content: '\02795'; /* Символ юникода для "плюса" знак (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .active:after {
+    content: "\2796"; /* Символ юникода для "минуса" знак (-) */
+  }
+
 .assortiment-cards {
     grid-area: assortiment-cards;
     width: auto;

@@ -12,13 +12,14 @@
     width: 1440px;
     display: grid;
     grid-template-columns: 350px auto;
-    grid-template-rows: 80px 80px 495px 40px auto 330px;
+    grid-template-rows: 80px 80px 495px 40px auto 48px 330px;
     grid-template-areas: 
     "header-top header-top"
     "header-main header-main"
     "content content"
     "nav-bar nav-bar"
     "menu-unihoc assortiment-cards"
+    "pagination-unihoc pagination-unihoc"
     "footer footer"
     ;
 }
@@ -213,10 +214,138 @@ ul.breadcrumb li a:hover {
     color: #777;
     float: right;
     margin-left: 5px;
+    margin-top: 5px;
   }
 
   .active:after {
     content: "\2796"; /* Символ юникода для "минуса" знак (-) */
+  }
+
+
+/*Пробуем "Аккордеон" только на CSS*/
+.accordion-css {
+    display: block;
+    margin: 0px;
+    position: relative;
+    font-family: 'Noto Sans';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16pt;
+    font-display: swap;
+    text-align: left;
+    border: none;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  .accordion-css input {
+    display: none;
+    position: absolute;
+    visibility: hidden;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+  }
+  
+  .accordion-css__header {
+    background-color: white;
+    /* border: 1px solid #CFD8DC; */
+    /* border-bottom-width: 0px; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color:black;
+    cursor: pointer;
+    transition: background 0.2s;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .accordion-css__header:hover {
+    background-color: #CFD8DC;
+    color: white;
+  }
+  .accordion-css__header:hover:before, .accordion-css__header:hover:after {
+    background-color: white;
+  }
+  .accordion-css__header:before, .accordion-css__header:after {
+    background-color:  black;
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 3;
+  }
+  .accordion-css__header:before {
+    height: 2px;
+    margin-top: -1px;
+    top: 50%;
+    right: 20px;
+    width: 8px;
+  }
+  .accordion-css__header:after {
+    height: 8px;
+    margin-top: -4px;
+    top: 50%;
+    right: 23px;
+    width: 2px;
+  }
+  .accordion-css input:checked ~ .accordion-css__header {
+    background: #607D8B;
+    /* border-color: #607D8B; */
+    border-color: white;
+    color: white;
+  }
+  .accordion-css input:checked ~ .accordion-css__header:hover {
+    background-color: #607D8B;
+    border-color: #607D8B;
+    color: white;
+  }
+  .accordion-css input:checked ~ .accordion-css__header:before {
+    background-color: white;
+  }
+  .accordion-css input:checked ~ .accordion-css__header:after {
+    display: none;
+  }
+  .accordion-css:first-child .accordion-css__header {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .accordion-css:last-child .accordion-css__header {
+    border-bottom-width: 1px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .accordion-css:last-child input:checked ~ .accordion-css__header {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+  .accordion-css__content {
+    background-color: white;
+    border: 1px solid #607D8B;
+    border-width: 0px 0px;
+    font-family: 'Noto Sans';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12pt;
+    display: none;
+    padding: 20px;
+  }
+
+  .accordion-css__content a {
+    text-decoration: none;
+    color: black;
+  }
+  .accordion-css input:checked ~ .accordion-css__content {
+    display: block;
+  }
+  .accordion-css:last-child .accordion-css__content {
+    border-bottom-width: 1px;
+    border-radius: 0px 0px 4px 4px;
+  }
+  .accordion-css__content h6 {
+    color: #607D8B;
+    font-size: 18px;
+    margin-bottom: 5px;
   }
 
 .assortiment-cards {
@@ -302,6 +431,33 @@ ul.breadcrumb li a:hover {
     padding: 2px;
     align-content: center;
 }
+
+.pagination-unihoc {
+    grid-area: pagination-unihoc;
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    
+}
+
+/* Ссылки для разбиения на страницы */
+.pagination-unihoc a {
+    
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+  
+ /* Стиль активной/текущей ссылки */
+ a.activeUnihoc {
+    background-color: dodgerblue;
+    color: white;
+}
+
+  /* Добавить серый цвет фона при наведении курсора мыши */
+  .pagination-unihoc a:hover:not(.active) {background-color: #ddd;}
 
 .footer {
 grid-area: footer;

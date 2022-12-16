@@ -115,10 +115,40 @@
     padding-right: 40px;
 }
 
+form {
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+}
+
+input {
+  width: 100%;
+  height: 42px;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1px solid  rgba(0, 0, 0, 0.2);
+  outline: none;
+  background: rgba(0, 0, 0, 0.0);
+  color: black;
+  font-size: 16px;
+}
+
+.header-main_right_button {
+  position: absolute; 
+  top: 0;
+  right: 0px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
 .content {
     grid-area: content;
     margin-top: 4px;
-}
+} 
 
 .nav-bar {
     grid-area: nav-bar;

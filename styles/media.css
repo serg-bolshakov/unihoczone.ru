@@ -1,5 +1,11 @@
 @media screen and (max-width: 758px) {
-    .footer {
+    .container {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 757px) {
+    .container-index_mobile {
         display: none;
     }
 }

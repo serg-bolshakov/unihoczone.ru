@@ -13,6 +13,7 @@
 }
 
 .header-index_mobile {
+    width: 99%;
     margin-top: 4px;
     margin-bottom: 4px;
     grid-area: header;
@@ -63,12 +64,7 @@ section {
 
 
 .image-1_professionals {
-    width: 100%;
-    /* display: block; */
-    /* margin-left: auto;
-    margin-right: auto; */
-    /* display: grid; */
-    /* grid-column: auto-fill, minmax(250px, auto); */
+    width: 99%;
 }
 
 .section-index-mobile_slider_block {
@@ -105,7 +101,7 @@ section {
 }
 
 .section-index-mobile_showcase_items img {
-    width: 100%;
+    width: 98%;
 }
 
 .section-index-mobile_welcomeSlogan {
@@ -145,7 +141,6 @@ section {
     border-radius: 8px;
     color: black;
     text-decoration: none;
-    /* width: 100%; */
     display: block;
     margin-top: auto;
     margin-bottom: auto;

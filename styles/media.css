@@ -1,10 +1,10 @@
-@media screen and (max-width: 758px) {
+@media (max-width: 758px) {
     .container {
         display: none;
     }
 }
 
-@media screen and (min-width: 757px) {
+@media (min-width: 757px) {
     .container-index_mobile {
         display: none;
     }

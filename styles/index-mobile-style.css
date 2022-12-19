@@ -1,8 +1,10 @@
 .container-index_mobile {
     /* height: 100vh; */
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
+    padding: 8px;
     width: 100%;
     display: grid;
+    justify-content: center;
     grid-template-areas: 
     "header"
     "slider-block"
@@ -12,6 +14,8 @@
 }
 
 .header-index_mobile {
+    margin-top: 4px;
+    margin-bottom: 4px;
     grid-area: header;
     position: sticky;
     top: 0;
@@ -19,7 +23,6 @@
 }
 
 .header-index_mobile_nav {
-    margin-top: 8px;
     padding: 0 8px;
     height: 72px;
     background-color: #fff;
@@ -31,7 +34,7 @@
 }
 
 .header-index_mobile_button {
-    width: 200px;
+    width: 180px;
     height: 48px;
     padding: 4px 8px;
     margin: 0 16px;
@@ -62,11 +65,11 @@ section {
 
 .image-1_professionals {
     width: 100%;
-    /* display: block;
-    margin-left: auto;
+    /* display: block; */
+    /* margin-left: auto;
     margin-right: auto */
-    display: grid;
-    grid-column: 1 (auto-fill, minmax(250px, auto));
+    /* display: grid; */
+    /* grid-column: auto-fill, minmax(250px, auto); */
 }
 
 .section-index-mobile_slider_block {
@@ -151,6 +154,7 @@ section {
 }
 
 .index-mobile_Slogan {
+    padding: 0 12px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
     font-size: 12pt;

@@ -1,8 +1,7 @@
 .container-index_mobile-320 {
     /* height: 100vh; */
     margin: 4px auto;
-    padding: 8px;
-    width: 260px;
+    width: 100%;
     display: grid;
     grid-template-areas: 
     "header"
@@ -12,24 +11,24 @@
     ;
 }
 
-.logo-img {
-    display: block;
-    align-items: center;
-    width: 20px;
-}
-
 .header-index_mobile-320 {
-    width: 250px;
-    height: 24px;
-    margin: 2px auto;
+    width: 98%;
+    height: 28px;
+    margin: 8px auto;
     grid-area: header;
     position: sticky;
     top: 0;
     z-index: 1;  
 }
 
+.logo-img {
+    display: block;
+    align-items: center;
+    width: 30px;
+}
+
 .header-index_mobile_nav-320 {
-    padding: 2px 4px;
+    padding: 4px 6px;
     background-color: #fff;
     border: 1px solid rgba(0, 253, 0, 0.5);
     border-radius: 4px;
@@ -39,8 +38,8 @@
 }
 
 .header-index_mobile_button-320 {
-    width: 60px;
-    height: 12px;
+    width: 80px;
+    height: 24px;
     margin: 0 4px;
     border: 1px solid rgba(0, 0, 0, 0.25);
     background-color: rgba(0, 0, 0, 0.05);
@@ -64,7 +63,9 @@
 
 
 .image-1_professionals-320 {
-    width: 250px;
+    display: block; 
+    width: 98%;
+    margin: 12px auto 4px auto;
 }
 
 .section-index-mobile_slider_block-320 {
@@ -91,9 +92,8 @@
 }
 
 .section-index-mobile_showcase-320 {
-    width: 250px;
+    width: 98%;
     grid-area: showcase;
-    justify-content: center;
     margin: 0 auto;
      
 }
@@ -105,27 +105,27 @@
 }
 
 .section-index-mobile_showcase_items-320 img {
-    width: 123px;
+    width: 49.45%;
 }
 
 .section-index-mobile_welcomeSlogan-320 {
     grid-area: welcomeSlogan;
-    margin: 4px 0;
-    width: 250px;
-    height: 28px;
+    margin: 4px auto;
+    width: 98%;
+    height: 36px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(245, 245, 245, 0.25);
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px; 
-    padding: 2px 4px;   
+    padding: 2px 14px;   
 }
 
 .index_mobile_button_bottom-320 {
     text-decoration: none;
-    padding-left: 2px;
-    width: 120px;
+    padding-left: 12px;
+    width: 160px;
     height: 24px;
     border: 1px solid rgba(0, 0, 0, 0.25);
     background-color: rgba(0, 0, 0, 0.05);

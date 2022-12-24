@@ -31,15 +31,53 @@
                     </div>
             </nav> 
         </header>
- 
-        <section class="section-index-mobile_slider-320">
-            <div class="section-index-mobile_slider_block-320">
-                <img class="image-1_professionals-320" src="images/floorball-pro_708x472.png" alt="professionals">
-                <p>Для профессионалов... </p>
+    
+        <!-- Slideshow container -->
+        <section class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/floorball-pro_708x472.png" alt="professionals" style="width:100%">
+                <div class="text">Для профессионалов ...</div>
                 <img class='slider-block_icons_position-320' src="icons/about.png" alt="icon about">
             </div>
-        </section>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="images/floorball-girls_708x473.jpeg" style="width:100%">
+                <div class="text">любителей ...</div>
+                <img class='slider-block_icons_position-320' src="icons/about.png" alt="icon about">
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="images/floorball-boys_708x472.jpg" style="width:100%">
+                <div class="text">школ, ФОКов, спортсменов других видов спорта ...</div>
+                <img class='slider-block_icons_position-320' src="icons/about.png" alt="icon about">
+            </div>
 
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="images/floorball-parents-children_708x472.jpg" style="width:100%">
+                <div class="text">самых маленьких (первая самая лучшая клюшка)</div>
+                <img class='slider-block_icons_position-320' src="icons/about.png" alt="icon about">
+            </div>
+        
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    
+        <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </section>
+        
         <section class="section-index-mobile_showcase-320">
             <div class="section-index-mobile_showcase_items-320">
                 <img src="images/showcase/showcase-sticks.png" alt="showcase-sticks">
@@ -65,5 +103,6 @@
         </section>
         
     </container>
+    <script src="scripts/main-mobile-320-slider.js"></script> 
 </body>
 </html>

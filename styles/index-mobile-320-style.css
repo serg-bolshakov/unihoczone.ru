@@ -1,154 +1,229 @@
 .container-index_mobile-320 {
-    /* height: 100vh; */
-    margin: 4px auto;
-    width: 100%;
-    display: grid;
-    grid-template-areas: 
+  /* height: 100vh; */
+  margin: 4px auto;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
     "header"
     "slider-block"
     "showcase"
-    "welcomeSlogan"
-    ;
+    "welcomeSlogan";
 }
 
 .header-index_mobile-320 {
-    width: 98%;
-    height: 28px;
-    margin: 8px auto;
-    grid-area: header;
-    position: sticky;
-    top: 0;
-    z-index: 1;  
+  width: 98%;
+  height: 28px;
+  margin: 8px auto;
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .logo-img {
-    display: block;
-    align-items: center;
-    width: 30px;
+  display: block;
+  align-items: center;
+  width: 30px;
 }
 
 .header-index_mobile_nav-320 {
-    padding: 4px 6px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 253, 0, 0.5);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;    
-    justify-content: space-evenly;
+  padding: 4px 6px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 253, 0, 0.5);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .header-index_mobile_button-320 {
-    width: 80px;
-    height: 24px;
-    margin: 0 4px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 2px;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 600;
-    font-size: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 80px;
+  height: 24px;
+  margin: 0 4px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  font-size: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-index_mobile_button-320 a {
-    text-decoration: none;
-    color: black;   
+  text-decoration: none;
+  color: black;
 }
 
-.section-index-mobile_slider-320 {
-    grid-area: slider-block;
+/* Slideshow container */
+.slideshow-container {
+  grid-area: slider-block;
+  max-width: 98%;
+  position: relative;
+  margin: 8px auto auto auto;
 }
 
-
-.image-1_professionals-320 {
-    display: block; 
-    width: 98%;
-    margin: 12px auto 4px auto;
+/* Hide the images by default */
+.mySlides {
+  display: none;
 }
 
-.section-index-mobile_slider_block-320 {
-    position: relative;   
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: yellow;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
 }
 
-.section-index-mobile_slider_block-320 p {
-    position	: absolute;
-    bottom		: 5%;
-    right		: 10%;
-    font-family: 'Noto Sans';
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-    font-size: 8px;
-    color: #fff; 
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+/* .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    } */
+
+/* Caption text */
+.text {
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  font-family: "Noto Sans";
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  font-size: 12px;
+  color: #fff;
 }
 
 .slider-block_icons_position-320 {
-    width: 8px;
-    position	: absolute;
-    bottom		: 8%;
-    right		: 6%;
+  width: 12px;
+  position: absolute;
+  bottom: 18%;
+  right: 6%;
+}
+
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .section-index-mobile_showcase-320 {
-    width: 98%;
-    grid-area: showcase;
-    margin: 0 auto;
-     
+  width: 98%;
+  grid-area: showcase;
+  margin: 0 auto;
 }
 
 .section-index-mobile_showcase_items-320 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .section-index-mobile_showcase_items-320 img {
-    width: 49.45%;
+  width: 49.45%;
 }
 
 .section-index-mobile_welcomeSlogan-320 {
-    grid-area: welcomeSlogan;
-    margin: 4px auto;
-    width: 98%;
-    height: 36px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(245, 245, 245, 0.25);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px; 
-    padding: 2px 14px;   
+  grid-area: welcomeSlogan;
+  margin: 4px auto;
+  width: 98%;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(245, 245, 245, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 2px 14px;
 }
 
 .index_mobile_button_bottom-320 {
-    text-decoration: none;
-    padding-left: 12px;
-    width: 160px;
-    height: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
+  text-decoration: none;
+  padding-left: 12px;
+  width: 160px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
 }
 
 .index-mobile_welcome-text-320 {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 600;
-    font-size: 8px;
-    color: black;
-    
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  font-size: 8px;
+  color: black;
 }
 
 .index-mobile_welcome-invitation-320 {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 400;
-    font-size: 6px;
-    color: black;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 6px;
+  color: black;
 }
 
 .index-mobile_Slogan-320 {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 400;
-    font-size: 8px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 8px;
 }

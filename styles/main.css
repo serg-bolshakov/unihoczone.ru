@@ -4,57 +4,52 @@
     box-sizing: border-box;
 }
 
-.d-flex {
-    display: flex;
+body {
+    background-color: hsl(240, 28%, 97%);
 }
 
-.flex-sb {
-    justify-content: space-between;
-}
-
-.container {
+.main-container {
     /* height: 100vh; */
     margin: 0 auto 0 auto;
-    width: 1440px;
+    background-color: white;
+    padding: 12px;
+    width: 1140px;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 80px 80px auto 330px;
-    column-gap: 8px;
+    grid-template-rows: 40px 80px 84px auto auto;
+    column-gap: 4px;
+    row-gap: 4px;
     grid-template-areas: 
     "header-top"
     "header-main"
+    "main-content__products-pictures"
     "content"
     "footer"
     ;
 }
 
-.header-top {
+.main-header__top {
     grid-area: header-top;
-    background-color: rgba(245, 245, 245, 0.5);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
     display: grid;
-    grid-column: 1 / 9;
-}
+  }
 
 
- .welcome {
+ .main-welcome__block {
     padding-top: 2.5%;
     display: flex;
     align-items: baseline;
 } 
 
-.welcome-text {
+.main-welcome__text {
     padding-left: 2%;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
-    font-size: 22pt;
+    font-size: 11pt;
 }
 
-.welcome-invitation {
+.main-welcome__invitation {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
-    font-size: 16pt;
+    font-size: 8pt;
 }
 
 .welcome-link {
@@ -62,33 +57,44 @@
     margin-left: 1.5%;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
-    font-size: 8pt;
+    font-size: 4pt;
 }
 
-.header-top_slogan {
+.main-external__link {
+    width: 15px;
+}
+
+.main-header__top-slogan {
     display: grid;
-    grid-column: 8/9;
+    grid-column: 8;
     align-items: center;
+    justify-content: end;
 }
 
 
-.header-main {
+.main-header {
     grid-area: header-main;
-    margin: 4px 0 4px 0;
-    background-color: rgba(245, 245, 245, 100);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    background-color: #fff;
+    margin: 12px 0;
     display: grid;
-    grid-column: 1 / 9;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
-.header-main_left {
-    display: flex;
+.header-main__left {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
     align-items: center;
-    padding-left: 20px;
+}
+
+.header-main__logo-img {
+    width: 35px;
+    height: 35px;
+    grid-column: 1;
 }
 
 nav ul {
@@ -97,7 +103,7 @@ nav ul {
 }
 
 nav ul>li {
-    padding-left: 60px;
+    padding-left: 30px;
 }
 
 nav ul>a {
@@ -108,30 +114,24 @@ nav ul>li>a {
     color: black;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
-    font-size: pt;
+    font-size: 12px;
     text-decoration: none;
 }
 
-.header-main_right {
-    display:flex;
-    grid-column: 2/9;
+.header-main__right {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
     align-items: center;
  }
 
-.header-main_right a {
-    padding-right: 40px;
-    
-}
-
-form {
+.header-main__right-form {
     position: relative;
-    width: 350px;
-    margin: 0 auto;
+    grid-column: 1 / 16;
   }
 
-  input {
+.header-main__right-input {
     width: 100%;
-    height: 42px;
+    height: 35px;
     padding-left: 10px;
     border: none;
     border-bottom: 1px solid  rgba(0, 0, 0, 0.2);
@@ -139,91 +139,311 @@ form {
     outline: none;
     background: rgba(0, 0, 0, 0.0);
     color: black;
-    font-size: 16px;
+    font-size: 12px;
   }
   
-  button {
+.header-main__right-button {
     position: absolute; 
     top: 0;
     right: 0px;
-    width: 42px;
-    height: 42px;
+    width: 35px;
+    height: 35px;
     border: none;
     background: none;
     border-radius: 0 8px 8px 0;
     cursor: pointer;
   }
 
+  .header-main__right img {
+    width: 20px;
+}
 
-.content {
-    grid-area: content;
-    padding: 8px;
-    background-color: rgba(245, 245, 245, 50);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+.header-main__right-icon-combo-chart {
+    grid-column: 18;
+}
+
+.header-main__right-icon-favorite {
+    grid-column: 20;
+}
+
+.header-main__right-icon-login {
+    grid-column: 22;
+}
+
+.header-main__right-icon-basket {
+    grid-column: 24;
+}
+
+
+.main-content__products {
+    grid-area: main-content__products-pictures;
     display: grid;
-    grid-column: 1/9;
+    grid-template-columns: repeat(10, 1fr);
+    column-gap: 4px;
+    margin: 8px 0;
+}
+
+.main-content__products-type {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    color:white;
+}
+
+.main-content__products-type:hover {opacity: 0.5;}
+
+.main-content__item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-content__item h2 {
+    font-size: 12px;
+    letter-spacing: 1.25px;
+}
+
+
+.main-content__products-sticks {
+    display: grid;
+    grid-column: 1;
+}
+.main-content__products-container {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .image-test {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  .main-content__products-overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  
+  .main-content__products-container:hover .main-content__products-overlay {
+    bottom: 0;
+    height: 100%;
+  }
+  
+  .main-content__products-text {
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+.main-content__products-blades {
+    display: grid;
+    grid-column: 2;
+}
+
+.main-content__products-grips {
+    display: grid;
+    grid-column: 3;
+}
+
+.main-content__products-shoes {
+    display: grid;
+    grid-column: 4;
+}
+
+.main-content__products-goalie {
+    display: grid;
+    grid-column: 5;
+}
+
+.main-content__products-eyewear {
+    display: grid;
+    grid-column: 6;
+}
+
+.main-content__products-apparel {
+    display: grid;
+    grid-column: 7;
+}
+
+.main-content__products-bags {
+    display: grid;
+    grid-column: 8;
+}
+
+.main-content__products-accessories {
+    display: grid;
+    grid-column: 9;
+}
+
+.main-content__products-basic_collection {
+    display: grid;
+    grid-column: 10;
+}
+
+.main-content {
+    grid-area: content;
+    display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 2 auto;
     column-gap: 4px;
-
-    margin-bottom: 4px;
+    row-gap: 48px;
+    margin: 24px 0;
 }
 
-.content-image {
+.main-content__images {
     position: relative;
-    background-color: rgba(245, 245, 245, 50);
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.content-image p {
+.main-content__images:hover {opacity: 0.7;}
+
+.main-content__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+.main-content__images p {
 	position	: absolute;
-	bottom		: 5%;
-	right		: 5%;
+	padding-left: 8px;
+    bottom		: 5%;
+	right		: 10%;
     font-family: 'Noto Sans';
     font-weight: bold;
     font-style: normal;
     font-display: swap;
-    font-size: 14pt;
+    font-size: 60%;
     color: #fff;
 }
 
-.content-image_1 {
-    grid-column: 1/ span 4;
+.main-content__icons-position {
+    width: 6%;
+    position	: absolute;
+    bottom		: 8%;
+    right		: 2.5%;
+    cursor:auto;
+}
+
+.main-content__image-1 {
+    grid-column: 1 / span 2;
     grid-row: 1;
 }
 
-.icons-position {
-position	: absolute;
-bottom		: 8%;
-right		: 1.5%;
-}
-
-.content-image_2 {
-    border-radius: 8px;
-    grid-column: 5/ span 4;
+.main-content__image-2 {
+    grid-column: 3 / span 2;
     grid-row: 1;
 }
 
-.content-image_3 {
-    border-radius: 8px;
-    grid-column: 1/ span 4;
-    grid-row: 2;
+.main-content__image-3 {
+    grid-column: 5/ span 2;
+    grid-row: 1;
 }
 
-.content-image_4 {
-    border-radius: 8px;
-    grid-column: 5/ span 4;
-    grid-row: 2;
+.main-content__image-4 {
+    grid-column: 7/ span 2;
+    grid-row: 1;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
 }
 
 .footer {
     grid-area: footer;
     padding: 1%;
-    background-color: rgba(0, 253, 0, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
     display: grid;
-    grid-column: 1/9;
     grid-template-columns: repeat(8, 1fr);
     column-gap: 2px;
 }
@@ -251,8 +471,8 @@ footer a:active {
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-    font-size: 12pt;
-    line-height: 1.75;
+    font-size: 12px;
+    line-height: 2;
 }
 
 .footer a {
@@ -260,8 +480,8 @@ footer a:active {
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-    font-size: 12pt;
-    line-height: 1.75;
+    font-size: 12px;
+    line-height: 2;
     display: flex;
     text-decoration: none;
     color: black;

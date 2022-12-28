@@ -17,29 +17,28 @@
     />
   </head>
   <body>
-    <container class="container">
-      <header class="header-top">
-        <div class="welcome">
-          <span class="welcome-text">Добро пожаловать</span>&nbsp;
-          <span class="welcome-invitation">в команду UNIHOC</span>
+    <container class="main-container">
+      <header class="main-header__top">
+        <div class="main-welcome__block">
+          <span class="main-welcome__text">Добро пожаловать</span>&nbsp;
+          <span class="main-welcome__invitation">в команду UNIHOC</span>
           <div class="welcome-link">
             <a href=""
-              ><img src="icons/external-link.png" alt="external-link"
+              ><img class="main-external__link" src="icons/external-link.png" alt="external-link"
             /></a>
             <div>(страница в новой вкладке)</div>
           </div>
         </div>
-        <div class="welcome-invitation header-top_slogan">
+        <div class="main-welcome__invitation main-header__top-slogan">
           &mdash;&nbsp;Участие важно,<br />
           но главное&nbsp;&mdash;&nbsp;это победа!
         </div>
       </header>
 
-      <header class="header-main">
-        <div>
-          <div class="header-main_left">
-            <img src="icons/logo.png" width="70" height="70" alt="logo" />
-            <nav>
+      <header class="main-header">
+         <div class="header-main__left">
+            <img class="header-main__logo-img" src="icons/logo.png" alt="logo" />
+            <nav class="main-header__nav">
               <ul>
                 <li><a href="unihoc.html">UNIHOC</a></li>
                 <a href=""
@@ -55,34 +54,33 @@
                 /></a>
               </ul>
             </nav>
-          </div>
         </div>
-        <div class="header-main_right">
-          <form action="" method="get">
-            <input name="search" placeholder="Что вы ищете..." type="search" />
-            <button type="submit">
+        <div class="header-main__right">
+          <form class="header-main__right-form"action="" method="get">
+            <input class="header-main__right-input" name="search" placeholder="Что вы ищете..." type="search" />
+            <button class="header-main__right-button" type="submit">
               <img src="icons/search.png" alt="search" />
             </button>
           </form>
-          <a href=""
+          <a class="header-main__right-icon-combo-chart" href=""
             ><img
               src="icons/combo-chart.png"
               alt="combo-chart"
               title="Добавить в сравнение"
           /></a>
-          <a href=""
+          <a class="header-main__right-icon-favorite" href=""
             ><img
               src="icons/favorite.png"
               alt="favorite"
               title="Добавить в избранное"
           /></a>
-          <a href=""
+          <a class="header-main__right-icon-login" href=""
             ><img
               src="icons/login.png"
               alt="login"
               title="Войти в личный кабинет / зарегистрироваться"
           /></a>
-          <a href=""
+          <a class="header-main__right-icon-basket" href=""
             ><img
               src="icons/opencart.png"
               alt="opencart"
@@ -91,46 +89,215 @@
         </div>
       </header>
 
-      <main class="content">
-        <div class="content-image content-image_1">
-          <img
-            src="images/main/floorball-pro_708x472.jpeg"
-            width="708"
-            height="472"
-            alt="proffesionals"
+      <main class="main-content__products">
+        <div class="main-content__products-type main-content__products-sticks">
+          <img class="main-content__image"
+            src="images/main/sticks.jpg"
+            alt="sticks"
           />
-          <p>Для профессионалов...</p>
-          <img class="icons-position" src="icons/about.png" alt="icon about" />
+          <div class="main-content__item">
+            <h2>КЛЮШКИ</h2>
+          </div>
+        </div>  
+
+        <div class="main-content__products-type main-content__products-blades">
+          <img class="main-content__image"
+            src="images/main/blades.jpg"
+            alt="blades"
+          />
+          <div class="main-content__item">
+            <h2>КРЮКИ</h2>
+          </div>
+        </div>  
+
+        <div class="main-content__products-type main-content__products-grips">
+          <img class="main-content__image"
+            src="images/main/grips.jpg"
+            alt="grips"
+          />
+          <div class="main-content__item">
+            <h2>ОБМОТКИ</h2>
+          </div>
+        </div>  
+
+
+        <!-- <div class="main-content__products-type main-content__products-shoes">
+          <img class="main-content__image"
+            src="images/main/shoes.jpg"
+            alt="shoes"
+          />
+          <div class="main-content__item">
+            <h2>ОБУВЬ</h2>
+          </div>
+        </div>   -->
+        
+        <div class="main-content__products-container main-content__products-shoes">
+          <img class="main-content__image"
+            src="images/main/shoes.jpg"
+            alt="apparel"
+          />
+          <div class="main-content__products-overlay">
+            <h2 class="main-content__products-text">ОБУВЬ</h2>
+          </div>
         </div>
-        <div class="content-image content-image_2">
-          <img
+
+        <div class="main-content__products-type main-content__products-goalie">
+          <img class="main-content__image"
+            src="images/main/goalie.jpg"
+            alt="goalie"
+          />
+          <div class="main-content__item">
+            <h2>ВРАТАРСКАЯ ЭКИПИРОВКА</h2>
+          </div>
+        </div>  
+        
+        <!-- <div class="main-content__products-type main-content__products-eyewear">
+          <img class="main-content__image"
+            src="images/main/eyewear.jpg"
+            alt="eyewear"
+          />
+          <div class="main-content__item">
+            <h2>ОЧКИ</h2>
+          </div>
+        </div>  -->
+
+        <div class="main-content__products-container main-content__products-eyewear">
+          <img class="main-content__image"
+            src="images/main/eyewear.jpg"
+            alt="apparel"
+          />
+          <div class="main-content__products-overlay">
+            <h2 class="main-content__products-text">ОЧКИ</h2>
+          </div>
+        </div>
+
+        <!-- <div class="main-content__products-type main-content__products-apparel">
+          <img class="main-content__image"
+            src="images/main/apparel.jpg"
+            alt="apparel"
+          />
+          <div class="main-content__item">
+            <h2>ОДЕЖДА</h2>
+          </div>
+        </div>  -->
+
+        <div class="main-content__products-container main-content__products-apparel">
+          <img class="main-content__image"
+            src="images/main/apparel.jpg"
+            alt="apparel"
+          />
+          <div class="main-content__products-overlay">
+            <h2 class="main-content__products-text">ОДЕЖДА</h2>
+          </div>
+        </div>
+
+        <!-- <div class="main-content__products-type main-content__products-bags">
+          <img class="main-content__image"
+            src="images/main/bags.jpg"
+            alt="bags"
+          />
+          <div class="main-content__item">
+            <h2>СУМКИ ЧЕХЛЫ</h2>
+          </div>
+        </div>  -->
+
+        <div class="main-content__products-container main-content__products-bags">
+          <img class="main-content__image"
+            src="images/main/bags.jpg"
+            alt="apparel"
+          />
+          <div class="main-content__products-overlay">
+            <h2 class="main-content__products-text">СУМКИ ЧЕХЛЫ</h2>
+          </div>
+        </div>
+
+        <!-- <div class="main-content__products-type main-content__products-accessories">
+          <img class="main-content__image"
+            src="images/main/accessories.jpg"
+            alt="accessories"
+          />
+          <div class="main-content__item">
+            <h2>АКСЕССУАРЫ</h2>
+          </div>
+        </div>  -->
+
+        <div class="main-content__products-container main-content__products-accessories">
+          <img class="main-content__image"
+            src="images/main/accessories.jpg"
+            alt="apparel"
+          />
+          <div class="main-content__products-overlay">
+            <h2 class="main-content__products-text">АКСЕССУАРЫ</h2>
+          </div>
+        </div>
+
+        <!-- <div class="main-content__products-type main-content__products-basic_collection">
+          <img class="main-content__image"
+            src="images/main/basic-collection.jpg"
+            alt="basic"
+          />
+          <div class="main-content__item">
+            <h2>БАЗОВАЯ КОЛЛЕКЦИЯ</h2>
+          </div>
+        </div> -->
+        
+        <div class="main-content__products-container main-content__products-basic_collection">
+          <img class="main-content__image"
+            src="images/main/basic-collection.jpg"
+            alt="apparel"
+          />
+          <div class="main-content__products-overlay">
+            <h2 class="main-content__products-text">БАЗОВАЯ КОЛЛЕКЦИЯ</h2>
+          </div>
+        </div>
+
+      </main>  
+
+
+      <main class="main-content">
+        <div class="main-content__images main-content__image-1">
+          <img  class="main-content__image" src="images/main/floorball-pro_708x472.jpeg" alt="proffesionals"/>
+          <p>Для профессионалов...</p>
+          <img class="main-content__icons-position" src="icons/about.png" alt="icon about" />
+        </div>
+        <div class="main-content__images main-content__image-2">
+          <img class="main-content__image"
             src="images/main/floorball-girls_708x473.jpeg"
-            width="708"
-            height="472"
             alt="floorball-friends"
           />
           <p>любителей...</p>
-          <img class="icons-position" src="icons/about.png" alt="icon about" />
+          <img class="main-content__icons-position" src="icons/about.png" alt="icon about" />
         </div>
-        <div class="content-image content-image_3">
-          <img
+                
+        <div class="main-content__images main-content__image-3">
+          <img class="main-content__image"
             src="images/main/floorball-boys_708x472.jpg"
-            width="708"
-            height="472"
-            alt="youngsters"
+            alt="Для школ, ФОКов, спортсменов других видов спорта..."
           />
           <p>школ, ФОКов, спортсменов других видов спорта...</p>
-          <img class="icons-position" src="icons/about.png" alt="icon about" />
+          <img class="main-content__icons-position" src="icons/about.png" alt="icon about" />
         </div>
-        <div class="content-image content-image_4">
-          <img
+                
+        <div class="main-content__images main-content__image-4">
+          <img id="myImg" class="main-content__image"
             src="images/main/floorball-parents-children_708x472.jpg"
-            width="708"
-            height="472"
-            alt="parents"
+            alt="самых маленьких (первая, самая лучшая клюшка)"
           />
-          <p>самых маленьких (первая самая лучшая клюшка)</p>
-          <img class="icons-position" src="icons/about.png" alt="icon about" />
+          <p>самых маленьких (первая, самая лучшая клюшка)</p>
+          <img class="main-content__icons-position" src="icons/about.png" alt="icon about" />
+        </div>
+
+        <!-- The Modal -->
+          <div id="myModal" class="modal">
+
+          <!-- The Close Button -->
+          <span class="close">&times;</span>
+
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img01">
+
+          <!-- Modal Caption (Image Text) -->
+          <div id="caption"></div>
         </div>
       </main>
 
@@ -139,8 +306,12 @@
           <h2>АССОРТИМЕНТ</h2>
           <p>Клюшки</p>
           <p>Крюки</p>
-          <p>Сумки и чехлы</p>
+          <p>Обмотки</p>
+          <p>Обувь</p>
           <p>Вратарская экипировка</p>
+          <p>Очки</p>
+          <p>Одежда</p>
+          <p>Сумки и чехлы</p>
           <p>Базовая коллекция</p>
         </div>
 
@@ -330,6 +501,7 @@
         </div>
       </section>
       <script src="scripts/main-mobile-320-slider.js"></script>
+      <script src="Scripts/main-img-modal.js"></script>
     </container>
   </body>
 </html>

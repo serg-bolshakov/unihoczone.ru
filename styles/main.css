@@ -62,6 +62,7 @@ body {
 
 .main-external__link {
     width: 15px;
+    border: none;
 }
 
 .main-header__top-slogan {
@@ -159,11 +160,11 @@ nav ul>li>a {
 }
 
 .header-main__right-icon-combo-chart {
-    grid-column: 18;
+    grid-column: 18 / span 2;
 }
 
 .header-main__right-icon-favorite {
-    grid-column: 20;
+    grid-column: 20 / span 2;
 }
 
 .header-main__right-icon-login {
@@ -174,7 +175,167 @@ nav ul>li>a {
     grid-column: 24;
 }
 
+/* БЛОК ВСПЛЫВАЮЩЕГО МЕНЮ (скрыт по умолчанию) */
+.pop-up__main-menu {
+    width: 720px;
+    height: 460px;
+    margin: 0 auto;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    padding: 24px;
+    column-gap: 4px;
+    row-gap: 4px;
+    border-radius: 4px;
+    background-color:white;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
 
+/* ПОКАЗЫВАЕМ БЛОК ВСПЛЫВАЮЩЕГО МЕНЮ ПРИ НАВЕДЕНИИ */
+.dropdown-main:hover .pop-up__main-menu {
+    display: grid;
+  }
+
+.dropdown-main img {
+    padding-left: 10px;
+}
+
+.pop-up__main-menu a:hover {
+    color: blue;
+}
+
+.pop-up__main-menu a:active {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.pop-up__main-menu h2 {
+    Font-family: 'Inter';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 200%;
+    margin-bottom: 2%;
+}
+
+.pop-up__main-menu p {
+    font-family: 'Inter';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    font-size: 10px;
+    line-height: 2;
+}
+
+.pop-up__main-menu a {
+    font-family: 'Inter';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    font-size: 10px;
+    line-height: 2;
+    display: flex;
+    text-decoration: none;
+    color: black;
+
+}
+
+.pop-up__main-menu a:hover {
+    text-decoration:underline;
+    color: black;
+
+}
+
+.pop-up__main-menu-sticks {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 8;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+}
+
+.pop-up__main-menu-blades {
+   grid-column: 3 / span 2;
+   grid-row: 1/5;
+   margin: 0;
+   padding: 4px;
+   border-radius: 4px;
+   border: 1px solid  rgba(0, 0, 0, 0.2);
+}
+
+.pop-up__main-menu-bags {
+    grid-column: 5/span 2;
+    grid-row: 1 / 4;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+ }
+ 
+.pop-up__main-menu-goalie {
+    grid-column: 3/span 2;
+    grid-row: 5 / 8;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+ }
+
+ .pop-up__main-menu-basic {
+    grid-column: 7 / span 2;
+    grid-row: 1 / 4;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+ }
+
+ .pop-up__main-menu-apparel {
+    grid-column: 7 / span 2;
+    grid-row: 4 / 9;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+ }
+
+ .pop-up__main-menu-grips {
+    grid-column: 1 / span 2;
+    grid-row: 8;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+ }
+
+ .pop-up__main-menu-eyewear {
+    grid-column: 3 / span 2;
+    grid-row: 8;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+ }
+
+ .pop-up__main-menu-shoes {
+    grid-column: 5 / span 2;
+    grid-row: 4 / span 2;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+ }
+
+ .pop-up__main-menu-accessories {
+    grid-column: 5 / span 2;
+    grid-row: 6 / span 3;
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid  rgba(0, 0, 0, 0.2);
+ }
+ 
 .main-content__products {
     grid-area: main-content__products-pictures;
     display: grid;

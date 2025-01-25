@@ -1,0 +1,40 @@
+name: Deploy to Hosting
+
+
+# Деплой запускается при пуше в ветку main
+# Checkout code: GitHub Actions клонирует репозиторий...
+# Set up SSH: Настраивает SSH-агент для подключения к серверу.
+
+# Deploy to server: Подключается к серверу по SSH и выполняет команды:
+    # Переходит в директорию проекта.
+    # Обновляет код из репозитория.
+    # Устанавливает зависимости через Composer.
+    # Запускает миграции (если нужно).
+
+on:
+  push:
+    branches:
+      - main  # Укажите ветку, которую хотите деплоить
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy to server
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "
+            cd /var/www/u127283/data/www/unihoczone.ru &&
+            git fetch origin &&
+            git reset --hard origin/main &&
+            composer install --optimize-autoloader --no-dev &&
+            php artisan migrate --force
+          "

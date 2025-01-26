@@ -385,7 +385,7 @@
                         <input type="hidden" id="actionButton" name="actionButton" value="">
 
                         <div class="d-flex flex-sa">
-                            @if(empty($user))
+                            @if(empty($user)) 
                                 <button id="idmakereserveinbasket" type="" class="registration-form__submit-btn" name="namemakereserveinbasket" value="1">Зарезервировать</button>
                             @else 
                                 <button id="idmakereserveinbasket" type="submit" class="registration-form__submit-btn" name="namemakereserveinbasket" value="1">Зарезервировать</button>

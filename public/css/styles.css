@@ -169,12 +169,12 @@ main {
     margin-right: auto;
 }
 
-nav ul>li {
+nav ul>li, nav>dl>dt {
     margin-left: 0.875rem;
 }
 
 /*убрал ссылки (может временно) из левого хедера, 2-я линия - от заголовков: UnihocZoneRussia / Unihoc / Zone? добавил в класс через запятую: nav>ul>li*/
-nav ul>li>a, nav>ul>li {
+nav ul>li>a, nav>ul>li, nav>dl>dt {
     font-weight: 600;
     font-size: 0.75rem;
     text-decoration: none;

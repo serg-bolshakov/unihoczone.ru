@@ -14,8 +14,8 @@
     <div class="header-secondline__aside--left">
         <a href="/"><img class="header-logo__img" src="/storage/icons/logo.png" alt="logo" title="Перейти на главную страницу сайта"></a>
         <nav>
-            <ul class="d-flex flex-wrap">
-                <li>UnihocZoneRussia</li>
+            <dl class="d-flex flex-wrap">
+                <dt>UnihocZoneRussia</dt>
                 <div class="dropdown-menu">
                     <img src="/storage/icons/expand-arrow.png" alt="external-link">
                     <div class="header-popup__menu">   
@@ -49,7 +49,7 @@
                     </div>
                 </div>
 
-                <li>UNIHOC</li>
+                <dt>UNIHOC</dt>
                     <div class="dropdown-menu">
                         <img src="/storage/icons/expand-arrow.png" alt="external-link">
                         <div class="header-popup__menu">                    
@@ -81,7 +81,7 @@
                         @endforeach
                         </div>
                     </div>
-                <li>ZONE</li>
+                <dt>ZONE</dt>
                     <div class="dropdown-menu">
                         <img src="/storage/icons/expand-arrow.png" alt="external-link">
                         <div class="header-popup__menu">   
@@ -113,7 +113,7 @@
                         @endforeach
                         </div>
                     </div>
-            </ul>    
+            </dl>    
         </nav>
     </div>
 

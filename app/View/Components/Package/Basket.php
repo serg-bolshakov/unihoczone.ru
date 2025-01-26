@@ -165,7 +165,7 @@ class Basket extends Component
                 // записываем в сессию id нового заказа:
                 session()->flash('newOrderId', $newOrderId);
                 session()->flash('flash', 'Спасибо за заказ! Мы уже начали собирать его. Остаёмся на связи!');
-
+/*
                 // Подготовка данных для отправки в Robokassa
                 $merchantLogin = "demo"; // Идентификатор магазина
                 $password1 = "password_1"; // Пароль #1 из настроек Robokassa
@@ -186,8 +186,8 @@ class Basket extends Component
                 // Перенаправляем пользователя на страницу оплаты
                 header("Location: $robokassaUrl");
                 exit;
-
-                // return redirect('/');
+*/
+                return redirect('/');
             // если заказ оформляет зарегистрированный пользователь - смотрим это физическое лицо или юридическое (orderClientTypeId)
             } elseif(!empty($user)) {
                 // создаём заказ от авторизованного(!) пользователя: добавляем в БД новый заказ и получаем его id, который можно будет сразу использовать... 

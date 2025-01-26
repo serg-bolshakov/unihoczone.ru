@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use Laravel\Fortify\Features;                                       // читаю советы ИИ (не могу настроить изменение пароля) 06.01.2025  - 10.01.2025 - думаю, что это лишнее - можно будет удалить (осторожно)
 use App\Http\Controllers\RegisteredUserController;                  // 09.01.2025 Обновим файл routes/web.php, чтобы использовать наш самописный контроллер для регистрации:
 use App\Http\Controllers\Auth\ResendVerificationEmailController;    // 10.01.2025 делаем кнопку для повторной отправки ссылки на подтверждение электронной почты
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,5 @@ Route::get('/resend-verification-email', function () {
 // Маршрут для обработки запроса повторной отправки письма
 Route::post('/resend-verification-email', [ResendVerificationEmailController::class, 'resend'])
     ->name('verification.resend');
+
+Route::post('/robokassa/result', [PaymentController::class, 'handleResult'])->name('robokassa.result');

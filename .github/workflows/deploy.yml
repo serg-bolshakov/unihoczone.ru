@@ -35,6 +35,6 @@ jobs:
             cd /var/www/u127283/data/www/unihoczone.ru &&
             git fetch origin &&
             git reset --hard origin/main &&
-            composer install --optimize-autoloader --no-dev &&
+            /var/www/u127283/data/www/composer.phar install --optimize-autoloader --no-dev &&
             php artisan migrate --force
           "

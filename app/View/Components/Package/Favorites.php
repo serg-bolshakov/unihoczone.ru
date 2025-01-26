@@ -25,6 +25,8 @@ class Favorites extends Component
         $prodsInFavoriteIdsArr = [];
         $prodsInFavoriteIdsStr = $this->request->favoriteslistfromlocalstorage;
         $productsArr = [];
+        $user = NULL;
+        $rankDiscount = $rankDiscountPercent = NULL;
 
         // если пользователь авторизован, нужно получить его данные для возможного оформления заказов:
         if(Auth::check()) {
@@ -49,7 +51,7 @@ class Favorites extends Component
             $i = 0;
         
             // если пользователь авторизован, мы должны проверить какие скидки ему доступны (по умолчанию, согласно рангу):
-            if(!empty($user->rank->price_discount) && ($user->rank->price_discount > 0)) {
+            if(isset($user->rank->price_discount) && ($user->rank->price_discount > 0)) {
                 $rankDiscountPercent = $user->rank->price_discount;
             }
 

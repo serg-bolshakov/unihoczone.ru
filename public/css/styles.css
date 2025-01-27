@@ -169,12 +169,12 @@ main {
     margin-right: auto;
 }
 
-nav ul>li, nav>dl>dt {
+nav ul>li, nav>dl>dt, nav>div>p {
     margin-left: 0.875rem;
 }
 
 /*убрал ссылки (может временно) из левого хедера, 2-я линия - от заголовков: UnihocZoneRussia / Unihoc / Zone? добавил в класс через запятую: nav>ul>li*/
-nav ul>li>a, nav>ul>li, nav>dl>dt {
+nav ul>li>a, nav>ul>li, nav>dl>dt, nav>div>p {
     font-weight: 600;
     font-size: 0.75rem;
     text-decoration: none;
@@ -196,7 +196,7 @@ nav ul>li>a, nav>ul>li, nav>dl>dt {
     max-width: 920px;
     max-height: 560px;
     position: absolute;
-    z-index: 5;
+    z-index: 15;
     transition: opacity 1.2s;
     /* display: flex; */
     flex-wrap: wrap;
@@ -212,8 +212,6 @@ nav ul>li>a, nav>ul>li, nav>dl>dt {
     border-radius: 4px;
     border: 1px solid  rgba(0, 0, 0, 0.2);
     background-color:rgb(246, 246, 246);
-    /* margin-right: 1px;
-    margin-bottom: 1px; */
 }
 
 .menu--element > ul {

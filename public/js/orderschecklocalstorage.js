@@ -5,7 +5,7 @@ if(Object.keys(globalDataOrders).length > 0) {
     let checkOrdersInLocalStorageForm = document.querySelector('#checkordersinlocalstorageform');
     let inputFormOrders = document.querySelector('#inputForCheckingOrdersFromLacalStorage');
     inputFormOrders.setAttribute('value', ordersIdsJson);
-    console.log(ordersIdsJson);
+    // console.log(ordersIdsJson);
     // выполняем однократное срабатывание формы для передачи post-запросом id-шников избранного для их выборки из БД.Для этого:
     let isCheckedOrdersInLocalStorage = sessionStorage.getItem('ischeckedorderslocalstorage');
     if (isCheckedOrdersInLocalStorage === null) {

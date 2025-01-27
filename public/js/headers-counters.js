@@ -34,10 +34,11 @@ headerBasketProductCounter.textContent = totalQuantityProductsInBasket;
 */
 
 let totalQuantityOrdersInput = document.querySelector('#idsOrdersInUserLocalStorage');
+
 let totalQuantityOrders = 0;
 if(totalQuantityOrdersInput.value != '') {
   let totalQuantityOrdersArr = JSON.parse(totalQuantityOrdersInput.value);
-  totalQuantityOrders = totalQuantityOrdersArr.length;
+  totalQuantityOrders = Object.keys(totalQuantityOrdersArr).length;
 }
 
 let headerOrdersCounter = document.querySelector('.header-orders__counter');

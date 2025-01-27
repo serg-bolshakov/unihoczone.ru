@@ -47,11 +47,11 @@ class Header extends Component
 
         if($this->ordersIds) {
             $ordersIdsArr = json_decode($this->ordersIds);
-            // dump($ordersIdsArr);
+            
+            $idsOrdersInUserLocalStorageToDel = [];                         // если буду id-заказов, которые есть в локальном хранилище браузера и уже нет в БД - будем записывать такие id сюда
             foreach($ordersIdsArr as $key=>$orderId) {
-                $idsOrdersInUserLocalStorageToDel = [];                         // если буду id-заказов, которые есть в локальном хранилище браузера и уже нет в БД - будем записывать такие id сюда
                 $isOrderStillExsists = Order::where('id', $orderId)->first();
-                // если заказа из строки локального хранилища браузера НЛО-пользователя уже в базе данных нет, нужно удалить этот элемент из массива id-заказов НЛО его логального хранилища: 
+                // если заказа из строки локального хранилища браузера НЛО-пользователя уже в базе данных нет, нужно удалить этот элемент из массива id-заказов НЛО его локального хранилища: 
                 if(empty($isOrderStillExsists)) {
                     $idsOrdersInUserLocalStorageToDel[] = $orderId;
                     unset($ordersIdsArr[$key]);

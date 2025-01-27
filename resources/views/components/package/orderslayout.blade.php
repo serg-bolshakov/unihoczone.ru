@@ -14,7 +14,7 @@
 
 </x-maket-main>
 {{-- Скопируем эту форму в header для того, чтобы проверять строку id- заказаов из локального хранилища браузера и сравнивать её с тем, что есть реально в БД... и корректировать строку хранилища, если есть диссонанс --}}
-<form id="checkordersinlocalstorageform" action="" method="POST">
+<form id="checkordersinlocalstorageform" action="{{ url()->current() }}" method="POST">
     @csrf
     <input id="inputForCheckingOrdersFromLacalStorage" type="hidden" name="orderslistfromlocalstorage">
 </form>

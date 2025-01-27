@@ -133,7 +133,7 @@
 
         <div class="header-icon__block">
         @if(empty($user_id))
-            <div class="header-orders__counter header-logo__counter color-blue">0</div>
+            <div class="header-orders__counter header-logo__counter color-blue"></div>
         @else
             @if($userAuthedOrdersCount != 0)
             <div class="header-logo__counter color-blue">{{ $userAuthedOrdersCount }}</div>
@@ -179,7 +179,7 @@
     @endif
 
     {{-- Скопируем эту форму из oredrslayoutblade для того, чтобы проверять строку id- заказаов из локального хранилища браузера и сравнивать её с тем, что есть реально в БД... и корректировать строку хранилища, если есть диссонанс --}}
-    <form id="checkordersinlocalstorageforminheader" action="" method="POST">
+    <form id="checkordersinlocalstorageforminheader" action="{{ url()->current() }}" method="POST">
         @csrf
         <input id="inputForCheckingOrdersFromLacalStorageinheader" type="hidden" name="orderslistfromlocalstorageinheader">
     </form>

@@ -1,8 +1,8 @@
 <p align="left">
   <a href="https://unihoczone.ru" target="_blank">
-    <img src="https://unihoczone.ru/storage/icons/logo56.png" width="16px" alt="logo" title="Перейти на главную страницу сайта" style="margin-right: 20px">
+    <img src="https://unihoczone.ru/storage/icons/logo56.png" width="32px" alt="logo" title="Перейти на главную страницу сайта"  style="margin-right: 20px">
   </a>
-  Интернет-магазин спортивных товаров (флорбольная экипировка) <strong>UnihocZoneRussia</strong>
+            Интернет-магазин спортивных товаров (флорбольная экипировка) <strong>UnihocZoneRussia</strong>
 </p>
 
 ## О проекте

@@ -1,7 +1,7 @@
-<p align="left">
+<p>
 Интернет-магазин спортивных товаров (флорбольная экипировка) <strong>UnihocZoneRussia</strong>      
-<a href="https://unihoczone.ru" target="_blank">
-    <img src="https://unihoczone.ru/storage/icons/logo56.png" width="32px" alt="logo" title="Перейти на главную страницу сайта"  style="margin-right: 20px">
+<a href="https://unihoczone.ru" target="_blank"  align="right">
+    <img src="https://unihoczone.ru/storage/icons/logo56.png" width="24px" alt="logo" title="Перейти на главную страницу сайта"  style="margin-right: 20px">
 </a>
 </p>
 

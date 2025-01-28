@@ -1,6 +1,6 @@
 <p align="left">
   <a href="https://unihoczone.ru" target="_blank">
-    <img src="https://unihoczone.ru/storage/icons/logo56.png" alt="logo" title="Перейти на главную страницу сайта" style="margin-right: 20px">
+    <img src="https://unihoczone.ru/storage/icons/logo56.png" width="16px" alt="logo" title="Перейти на главную страницу сайта" style="margin-right: 20px">
   </a>
   Интернет-магазин спортивных товаров (флорбольная экипировка) <strong>UnihocZoneRussia</strong>
 </p>
@@ -43,6 +43,31 @@
   - Просмотр истории заказов, оформление покупок, резервирование товаров.
   - Уведомления о поступлении новых товаров.
   - Возможность изменения личных данных, логина и пароля.
+
+## Скриншоты интерфейса
+
+### 1. История просмотров
+![История просмотров](https://unihoczone.ru/storage/screenshots/recently_viewed.png)
+_Блок с последними просмотренными товарами. Отображает 6 последних товаров, которые пользователь просматривал._
+
+### 2. Избранное
+![Избранное](https://unihoczone.ru/storage/screenshots/favorites.png)
+_Раздел "Избранное", где пользователь может сохранять понравившиеся товары и отслеживать их доступность._
+
+### 3. Корзина
+![Корзина](https://unihoczone.ru/storage/screenshots/basket.png)
+_Корзина с товарами. Пользователь видит актуальные цены, количество товаров и возможные скидки._
+
+### 4. Оформление заказа
+![Оформление заказа](https://unihoczone.ru/storage/screenshots/order_making.png)
+_Процесс оформления заказа. Пользователь может выбрать способ оплаты и доставки._
+
+### 5. Личный кабинет
+![Личный кабинет](https://unihoczone.ru/storage/screenshots/profile_view.png)
+_Личный кабинет пользователя. Здесь можно просматривать и изменять личные данные и управлять избранными товарами._
+
+![Личный кабинет](https://unihoczone.ru/storage/screenshots/profile_goods.png)
+_Личный кабинет пользователя. Здесь можно наполнять корзину товарами._
 
 
 

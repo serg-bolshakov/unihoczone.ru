@@ -26,6 +26,12 @@ class AssortimentCards extends Component {
         # у нас будет доступна переменная $request, содержащая нужный нам объект запроса. Получаем GET-запрос из адресной строки и записываем его в свойство:
         $this->requestWithFilters = $request->all();
         // dd($this->requestWithFilters);
+        
+        # если идёт запрос товаром основной категории, то мы получаем массив всех подкатегорий:
+        $this->requestMainCategoryWithSubCats = [];
+        if(empty($request->all())) { // в этом случае мы получаем запрос на ТОЛЬКО НА ОСНОВНУЮ категорию товаров, можем определить id  
+            $this->requestMainCategoryWithSubCats = $this->getCategoryProducts($this->getCategoryIdViaUrl()); 
+        }
     }
 
 
@@ -36,17 +42,6 @@ class AssortimentCards extends Component {
 
         $categoryId = $this->getCategoryIdViaUrl();
         $filtersArr = $this->requestWithFilters;
-
-        # получаем массив категорий товаров, которые могут быть в подкатегории. 08/01/2025 - пока не понял зачем это и где далее используется!!!???
-        /* пока комментируем... нашёл где и как! смотри ниже по коду
-        $target = $this->getBrandedCategoriesMenuArrMainCategory($branId = 0, $categoryId);
-
-        if(isset($target) && !empty($target)) {
-            dd($target);
-            $categoriesIdsArr = $target['catIds'];
-            $categoriesIdsStr = implode(',', $categoriesIdsArr);
-        }
-        */
         
         $whereFromCategoryList = $whereFromProdModel = '1';
         
@@ -66,15 +61,16 @@ class AssortimentCards extends Component {
                 $categoriesIdsStr = trim($categoriesIdsStr, ',');
 
                 //dd($categoriesIdsStr);
+            } else {
+                $categoriesIdsArr = $this->getCategoryProducts($this->getCategoryIdViaUrl());
+                $whereFromCategoryList = '1';
             }
+
             if(!empty($categoriesIdsStr)) {
                 $whereFromCategoryList = "category_id IN ($categoriesIdsStr)"; 
-            } else {
-                $whereFromCategoryList = "category_id = $categoryId"; 
             }
         } 
 
-        // dd($whereFromCategoryList);
         $filterBrandSet = $filterSizeSet = $filterHookBladeSet = $filterHookBladeProdIds = 
         $filterBladeStiffnessProdIds = $filterBladeStiffnessPropIds = $filterHookStickProdIds = 
         $filterStickSizesSet = $filterStickShaftFlexProdIds = $filterProdPropIds = [];
@@ -218,7 +214,16 @@ class AssortimentCards extends Component {
                 }
             }
         }
-        // dd($categoriesIdsArr);
+        
+        if(empty($categoriesIdsArr)) {  // это значит, что мы запрашиваем основную категорию... со всеми её подкатегориями...
+            $categoriesIdsArr = $this->requestMainCategoryWithSubCats;
+            $whereFromCategoryList = '1';
+        }
+        
+        // dump($categoriesIdsArr);
+        // dd($whereFromCategoryList);
+
+
         $products = Product::with(['actualPrice', 'regularPrice', 'category', 'brand', 'properties'])
             ->where('product_status_id', '=', 1)
             ->when($filterBrandSet, function ($query, $filterBrandSet) {

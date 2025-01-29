@@ -465,7 +465,61 @@ trait CategoryTrait {
 
         // $res['catIds'] = array_unique($categoryIds);
         // $res['catIds'] = implode(',', $res['catIds']);
-        //dd($res);
+        // dd($res);
+        return $res;
+    }
+
+    public function getCategoryProducts($categoryId) {
+        // уже подразумеваем, что сюда пришёл запрос на получение товаров из основной категории товаров, у которой parent_id = NULL
+        $res = [$categoryId];
+        
+        # выбираем нужную категорию (и её подкатегории)
+        $categories = DB::table('categories')
+        ->distinct()
+        ->get('categories.*');
+
+        # некоторые категории являются потомками от нескольких категорий (например, у нас "Баулы" относятся к категории "Сумки и чехлы", а так же являются подкатегорией "Вратарям") 
+        # - проверяем есть ли такие категории и, разбиваем такие категории на отдельные элементы массива:
+        foreach($categories as $key=>$category) {
+            $parentsIdsStr = $category->parent_id; 
+            if(!empty($parentsIdsStr)) {
+                if(str_contains($parentsIdsStr, ',')) {
+                    $parentCategoriesArr = explode(',', $parentsIdsStr);
+                    $categories->forget($key)->all();
+                    
+                    foreach($parentCategoriesArr as $parentCategory) {
+                        $copy_of_object = clone $category;
+                        $copy_of_object->parent_id = $parentCategory;
+                        $categories[] = $copy_of_object;
+                    }
+                }
+            }
+        }
+        
+        $groupedCategories = $categories->groupBy('parent_id');
+        
+        # смотрим, если у основной категории есть потомки, - выводим основную категорию вместе с потомками
+        # если у основной категории нет потомков, - выводим её ...
+        if($groupedCategories->has($categoryId)) {
+            foreach($groupedCategories as $key=>$group) {
+                if($key == $categoryId) {
+                    foreach($group as $subMainElem) {
+                        $res[] = $subMainElem->id;
+                        # обратиться к БД и узнать, есть ли у этой подкатегории дети:
+                        $hasChildrenCategory = DB::table('categories')->where('parent_id', $subMainElem->id)->value('id');
+                        if($hasChildrenCategory) {
+                            $subMainElemChildren = DB::table('categories')->where('parent_id', $subMainElem->id)->pluck('id');
+                            if(!empty($subMainElemChildren)) {
+                                foreach($subMainElemChildren as $child) {
+                                    $res[] = $child;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // dd($res);
         return $res;
     }
 }

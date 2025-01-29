@@ -187,20 +187,19 @@ class BlockOtherPossibleProdsForCard extends Component
             // выбираем крюки цветов, отличных от текущего:
             $sql = "SELECT DISTINCT p.category_id, p.prod_url_semantic, p.colour, p.model, i.img_main, i.img_link
             FROM products p, images i
-            WHERE p.id = i.product_id AND p.category_id = $currentProdCategoryId 
-            AND p.model LIKE '$currentProdModel'
-            -- AND p.brand_id = $currentProdBrandId
-            AND colour NOT LIKE '$currentProdColour'   
+            WHERE p.id = i.product_id AND p.category_id = $product->category_id 
+            AND p.model LIKE '$product->model'
+            -- AND p.brand_id = $product->brand_id
+            AND colour NOT LIKE '$product->colour'   
             AND i.img_main IN (1)
             ";
-            //$otherProductsForCard = DB::raw($sql); -это не сработало. Просто выводит сам запрос
             
             $otherProductsForCard =  DB::table('products')
                 ->select('category_id', 'prod_url_semantic', 'colour', 'model', 'img_main', 'img_link')
                 ->join('images', 'images.product_id', '=', 'products.id') 
-                ->where('products.category_id', '=', $currentProdCategoryId) 
-                ->where('products.model', 'LIKE', $currentProdModel)
-                ->where('products.colour', 'NOT LIKE', $currentProdColour)
+                ->where('products.category_id', '=', $product->category_id) 
+                ->where('products.model', 'LIKE', $product->model)
+                ->where('products.colour', 'NOT LIKE', $product->colour)
                 ->where('images.img_main', '=', '1')
                 ->distinct()
                 ->get();

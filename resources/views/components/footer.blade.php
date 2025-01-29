@@ -153,8 +153,10 @@
       </div> -->
       
       <div class="footer-auth__div">
-        <p><a href="#how-does-it-work" class="modal-link">Сделано</a>&nbsp;<a href="mailto:serg.bolshakov@gmail.com">Большаковым&nbsp;Сергеем</a>, 2023-<?= date('Y'); ?></p>
-        <p>Демоверсия 0.0.3</p>
+        <!-- <p><a href="#how-does-it-work" class="modal-link">Сделано</a>&nbsp;<a href="mailto:serg.bolshakov@gmail.com">Большаковым&nbsp;Сергеем</a>, 2023-<?= date('Y'); ?></p> -->
+        <p>Сделано&nbsp;<a href="mailto:serg.bolshakov@gmail.com">Большаковым&nbsp;Сергеем</a>, 2023-<?= date('Y'); ?></p>
+        <p>Демоверсия 0.0.4 <a href="https://github.com/serg-bolshakov/unihoczone.ru">Посмотреть</a> исходный код.</p>
+        <p>Готов к <a href="/storage/docs/rezume.pdf">сотрудничеству</a><span class="cursive">(rezume.pdf, 68 Кб) — Обновлено 29.01.2025 г.</span></p>
         <p><a href="https://floorball.nnov.ru/htdocs/shop/">Перейти на сайт&nbsp;</a>флорбольной экипировки</p>
         <p>или в наш флорбольный <a href="https://floorball.nnov.ru/market/floorball-sticks">Интернет-магазин&nbsp;</a></p>
       </div>
@@ -167,8 +169,6 @@
               <div class="scroll-to-top-container"><div class="scroll-to-top">&#9650;</div></div>    
               
           </div>
-          
-          
       </div>
   </div>   
 

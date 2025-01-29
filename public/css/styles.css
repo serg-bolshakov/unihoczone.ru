@@ -35,6 +35,10 @@ strong {
     font-weight: bold;
 }
 
+.cursive {
+    font-style: italic;
+}
+
 .margin-tb4px       { margin: 4px 0;       }
 .margin-tb12px      { margin: 12px 0;      }
 .margin-top8px      { margin-top: 8px;     }

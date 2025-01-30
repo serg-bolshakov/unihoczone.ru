@@ -2,7 +2,7 @@
 **Email**: serg.bolshakov@gmail.com  
 **Телефон**: +7 (953) 415-60-10  
 **GitHub**: [github.com/serg-bolshakov](https://github.com/serg-bolshakov)
-**LinkedIn**: [linkedin.com/in/serg-bolshakov](https://linkedin.com/in/sergei-bolshakov-95423a77)    
+**LinkedIn**: [linkedin.com/in/serg-bolshakov](https://linkedin.com/in/sergei-bolshakov)    
 55 лет (родился 26 декабря 1969), высшее образование
 Нижний Новгород, гражданство: Россия
 

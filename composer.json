@@ -9,6 +9,7 @@
         "barryvdh/laravel-dompdf": "^3.0",
         "doctrine/dbal": "^3.9",
         "guzzlehttp/guzzle": "^7.2",
+        "inertiajs/inertia-laravel": "^2.0",
         "laravel/fortify": "^1.25",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",

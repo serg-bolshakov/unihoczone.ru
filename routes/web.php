@@ -8,10 +8,14 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LkController;
 use App\Http\Controllers\ProfileController;
-use Laravel\Fortify\Features;                                       // читаю советы ИИ (не могу настроить изменение пароля) 06.01.2025  - 10.01.2025 - думаю, что это лишнее - можно будет удалить (осторожно)
+use Laravel\Fortify\Features;                                       // 06.01.2025  - 10.01.2025 - думаю, что это лишнее - можно будет удалить (осторожно)
 use App\Http\Controllers\RegisteredUserController;                  // 09.01.2025 Обновим файл routes/web.php, чтобы использовать наш самописный контроллер для регистрации:
 use App\Http\Controllers\Auth\ResendVerificationEmailController;    // 10.01.2025 делаем кнопку для повторной отправки ссылки на подтверждение электронной почты
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SiteMapXmlController;
+use App\Http\Controllers\SiteMapController;
+use Inertia\Inertia;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,14 +32,6 @@ Route::get('/posts/{year}/{month}/{day}', function ($year, $month, $day) {
     return 'Пост №: ' . $year;
 })->where('year', '2024')->where('month', '0[1-9]|1[012]')->where('day', '0[1-9]|1[0-9]|2[0-9]|3[01]');
 
-Route::prefix('admin/users')->group(function() {
-    Route::get('/', function () {
-        return 'all';
-    });
-    Route::get('/{id}', function ($id) {
-        return $id;
-    })->whereNumber('id');
-});
 
 Route::match(['get', 'post'], '/products/card/{prodUrlSemantic}', [CardController::class, 'index']);
 Route::match(['get', 'post'], '/products/basket', [BasketController::class, 'show']);
@@ -43,7 +39,16 @@ Route::match(['get', 'post'], '/products/favorites', [PackageController::class, 
 Route::match(['get', 'post'], '/orders', [PackageController::class, 'show']);
 // Route::get('/products/catalog', ['App\\Http\\Controllers\\CatalogController', 'index']);
 Route::match(['get', 'post'], '/products/{category?}', ['App\\Http\\Controllers\\CatalogController', 'index']);
+
 Route::match(['get', 'post'], '/', ['App\\Http\\Controllers\\IndexController', 'index']);
+
+// Маршруты для Inertia.js
+Route::prefix('app')->group(function () {
+    Route::get('/', function () {
+        return Inertia::render('Home');
+    })->name('home');
+});
+
 Route::match(['get', 'post'], '/products', ['App\\Http\\Controllers\\ProductController', 'show']);
 Route::match(['get', 'post'], '/lk', [LkController::class, 'index']);
 Route::match(['get', 'post'], '/profile', [ProfileController::class, 'index'])->middleware(['verified']);
@@ -78,3 +83,9 @@ Route::post('/resend-verification-email', [ResendVerificationEmailController::cl
     ->name('verification.resend');
 
 Route::post('/robokassa/result', [PaymentController::class, 'handleResult'])->name('robokassa.result');
+
+// Маршрут для генерации карты сайта:
+Route::get('/generate-sitemap', [SiteMapXmlController::class, 'generate']);
+
+// Маршрут для HTML-карты сайта:
+Route::get('/sitemap', [SiteMapController::class, 'index']);

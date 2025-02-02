@@ -4014,3 +4014,47 @@ modal-button:hover {
 .scroll-to-top:hover {
     background-color: #0056b3; /* Цвет фона при наведении */
 }
+
+.sitemap {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sitemap-content {
+    position: relative; /* Фиксированное позиционирование */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Смещаем назад на половину ширины и высоты */
+    background-color: #fefefe;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 460px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align:justify;
+    line-height: 1.35;
+    overflow-y: auto;
+    max-height: 50vh; /*Ограничиваем высоту */
+    /* animation: fadeIn 1.5s ease-in-out; */
+}
+
+.sitemap-content p {
+    margin-bottom: 12px;
+}
+
+.sitemap-content a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);;
+}
+
+.sitemap-content a:hover {
+    color: #0056b3;
+}

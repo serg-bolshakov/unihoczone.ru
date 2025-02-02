@@ -8,7 +8,7 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LkController;
 use App\Http\Controllers\ProfileController;
-use Laravel\Fortify\Features;                                       // 06.01.2025  - 10.01.2025 - думаю, что это лишнее - можно будет удалить (осторожно)
+// use Laravel\Fortify\Features;                                    // 06.01.2025  - 10.01.2025 - думаю, что это лишнее - можно будет удалить (осторожно)
 use App\Http\Controllers\RegisteredUserController;                  // 09.01.2025 Обновим файл routes/web.php, чтобы использовать наш самописный контроллер для регистрации:
 use App\Http\Controllers\Auth\ResendVerificationEmailController;    // 10.01.2025 делаем кнопку для повторной отправки ссылки на подтверждение электронной почты
 use App\Http\Controllers\PaymentController;
@@ -40,14 +40,14 @@ Route::match(['get', 'post'], '/orders', [PackageController::class, 'show']);
 // Route::get('/products/catalog', ['App\\Http\\Controllers\\CatalogController', 'index']);
 Route::match(['get', 'post'], '/products/{category?}', ['App\\Http\\Controllers\\CatalogController', 'index']);
 
-Route::match(['get', 'post'], '/', ['App\\Http\\Controllers\\IndexController', 'index']);
-
 // Маршруты для Inertia.js
 Route::prefix('app')->group(function () {
     Route::get('/', function () {
         return Inertia::render('Home');
     })->name('home');
 });
+
+Route::match(['get', 'post'], '/', ['App\\Http\\Controllers\\IndexController', 'index']);
 
 Route::match(['get', 'post'], '/products', ['App\\Http\\Controllers\\ProductController', 'show']);
 Route::match(['get', 'post'], '/lk', [LkController::class, 'index']);
